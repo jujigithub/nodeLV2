@@ -45,7 +45,7 @@ router.post("/posts/:postId/comments", authMiddleware, async (req, res) => {
   const { postId } = req.params;
 
   try {
-    if (!req.body) {
+    if (Object.keys(req.body).length === 0) {
       res.status(412).json({ message: "데이터 형식이 올바르지 않습니다." });
       return;
     }
