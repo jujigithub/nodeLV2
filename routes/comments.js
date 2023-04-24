@@ -19,7 +19,7 @@ router.get("/posts/:postId/comments", async (req, res) => {
         content: a.content,
         createdAt: a.createdAt,
         updatedAt: a.updatedAt,
-        _id: undefined,
+        // _id: undefined,
       };
     });
 
