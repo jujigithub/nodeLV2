@@ -140,7 +140,9 @@ router.put("/posts/:postId", authMiddleware, async (req, res) => {
       { $set: { title, content, updatedAt: Date.now() } }
     ).catch((err) => {
       console.log(err);
-      res.status(401).json({ errorMessage: "에러메세지" });
+      res
+        .status(401)
+        .json({ errorMessage: "게시글이 정상적으로 수정되지 않았습니다." });
     });
     res.status(200).json({ message: "게시글을 수정하였습니다." });
   } catch (err) {
